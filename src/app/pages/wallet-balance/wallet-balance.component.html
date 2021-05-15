@@ -1,0 +1,25 @@
+<div class="container shadow p-3 mb-5 bg-white rounded">
+    <div class="row">
+        <div class="col-md-12">
+            <h5><b>Your Wallet</b></h5><hr><br>
+            <h6><b>Wallet :</b></h6> {{ walletAddress }} <br><br>
+            <h6><b>Balance:</b></h6> {{ walletBalance }} <br>
+            <hr>            
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-md-12">
+            <h6><b>Your Transaction History:</b></h6>             
+
+            <span *ngIf="transactions.length == 0"
+            >Sorry Dear, but You don't have any Transactions Yet.</span>
+
+            <app-transactions-table    
+                *ngIf="transactions != 0"
+                [transactions]="transactions"
+            >
+            </app-transactions-table>    
+
+        </div>
+    </div>    
+</div>

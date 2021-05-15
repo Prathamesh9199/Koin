@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Settings</h1>
+    <br>
+
+    <div class="form-group text-center">
+        <label for="">This Page is Dynamic, change in textbox will automatically update values in Blockchain</label>
+    </div>
+    <br>
+
+    <div class="form-group">
+        <label for="">Difficulty</label>
+        <input type="number" class="form-control" [(ngModel)]="blockchain.difficulty" min="1" max="256">
+    </div>
+
+    <br>
+
+    <div class="form-group">
+        <label for="">Current Mining Reward</label>
+        <input type="number" class="form-control" [(ngModel)]="blockchain.miningReward" min="1" disabled>
+        <small>Mining Reward(Started at 100 Koins) will be reduced to half for every 4 blocks mined.</small>
+    </div>
+</div>

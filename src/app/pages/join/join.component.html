@@ -1,0 +1,56 @@
+<div class="container">    
+    <div class="row">               
+        <div class="col-md-2"></div>        
+        <div class="col-md-8 mt-5">          
+            <div class="alert alert-danger" role="alert" *ngIf="ms != ''">
+                {{ ms }}
+              </div>  
+            <div class="card border-primary" style="width: 50rem;" [style]=createWallet>
+                <div class="card-header">
+                    <h4 class="card-title mb-4 mt-3 text-center">Create New Wallet</h4>
+                </div>
+                <article class="card-body">                                        
+                    <form>
+                        <div class="form-group">
+                            <label for="">
+                                - Clicking on the button will generate your <u>Unique Wallet Address & Password</u>. <br><br>
+                                - <b>Wallet Address :</b> You can use this to <u>Accept Payment</u>. <br><br>
+                                - <b>Wallet Password:</b> Do not <u>Expose</u> it to Anyone, or you will <u>Loose Everything</u>. <br><br>  
+                                - Download <b>wallet.txt</b> and use <u>Wallet Address & Password to Access Your Wallet</u>. <br>
+                            </label>                        
+                            <button class="btn btn-primary btn-block" (click)="donwloadWalletKeys()" [style]=createStyle> Create & Download My Wallet Keys </button>
+                            <!--<a id="donwloadKeys" class="btn btn-success btn-block" [href]=link [style]=downloadStyle [download]=download (click)="keysCreated()"> Download Wallet Keys</a>-->
+                        </div> <!-- form-group// -->                                                           
+                        <div class="form-group text-center">
+                            <a href="/join" class="text-primary">Access my Wallet</a>
+                        </div>                        
+                    </form>
+                </article>
+            </div> <!-- card.// -->
+            
+            <div class="card border-primary" style="width: 100%;" [style]=joinWallet>
+                <div class="card-header">
+                    <h4 class="card-title mb-4 mt-3 text-center">Access My Wallet</h4>
+                </div>
+                <article class="card-body">                                                            
+                        <div class="form-group">
+                            <label>Your Wallet Address</label>
+                            <input name="" class="form-control" placeholder="Wallet Address" type="text" [(ngModel)]="userWalletAddress">
+                        </div> <!-- form-group// -->
+                        <div class="form-group">                            
+                            <label>Your Wallet Password</label>
+                            <input class="form-control" placeholder="Wallet Password" type="text" [(ngModel)]="userWalletPassword">
+                        </div> <!-- form-group// -->                                                                         
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block" (click)="join()"> Join </button>
+                        </div> <!-- form-group// -->                                                                                   
+                        <div class="form-group text-center">
+                            <a (click)="newWallet()" class="text-primary" style="cursor: pointer;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration=''">I want a new Wallet</a>
+                        </div>                                                   
+                </article>
+            </div> <!-- card.// -->
+        </div>
+
+        <div class="col-md-2"></div>
+    </div>
+</div>

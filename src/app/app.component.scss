@@ -1,0 +1,64 @@
+#Koin{
+  position: relative;
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: 800;
+  color: royalblue;
+  overflow: hidden;
+  background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  text-decoration: none; // text decorations are clipped in WebKit browsers
+  &:hover {
+    background-position: 0 100%;
+  }
+}
+
+.badge {
+  position: relative;
+  top: -10px;
+  right: 10px;
+  padding: 1px;
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 50%;
+  background: yellow;
+  color: darkblue;
+}
+
+#aboutKoin{
+  -webkit-animation: color-change 1s infinite;
+  -moz-animation: color-change 1s infinite;
+  -o-animation: color-change 1s infinite;
+  -ms-animation: color-change 1s infinite;
+  animation: color-change 1s infinite;
+}
+@-webkit-keyframes color-change {
+  0% { color: royalblue; }
+  50% { color: midnightblue; }
+  100% { color: royalblue; }
+}
+@-moz-keyframes color-change {
+  0% { color: royalblue; }
+  50% { color: midnightblue; }
+  100% { color: royalblue; }
+}
+@-ms-keyframes color-change {
+  0% { color: royalblue; }
+  50% { color: midnightblue; }
+  100% { color: royalblue; }
+}
+@-o-keyframes color-change {
+  0% { color: royalblue; }
+  50% { color: midnightblue; }
+  100% { color: royalblue; }
+}
+@keyframes color-change {
+  0% { color: royalblue; }
+  50% { color: midnightblue; }
+  100% { color: royalblue; }
+}

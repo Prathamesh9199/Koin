@@ -1,0 +1,37 @@
+  <div class="card">
+    <div class="body">
+      <div class="row col-md-12">
+
+        <div class="col-md-4">
+          <span><b>Hash <small class="text-muted" *ngIf="block.previousHash == 0">(Geneis Block)</small></b></span>          
+            <br>
+            <div class="text-truncate" [style.color]="'#' + block.hash.substring(0, 6)">
+              <small>{{ block.hash }}</small>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+          <span><b>Hash of Previous Block</b></span>
+          <br>
+          <div class="text-truncate" [style.color]="'#' + block.previousHash.substring(0, 6)">
+            <small>{{ block.previousHash }}</small>
+          </div>        
+        </div>
+
+        <div class="col-md-2">
+          <span><b>nOnce</b></span>        
+            <div class="text-truncate text-muted">
+              <small>{{ block.nOnce }}</small>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+          <span><b>TimeStamp</b></span>        
+            <div class="text-truncate text-muted">
+              <small>{{ block.timeStamp }} | {{ block.timeStamp | date: 'MM d, y, HH:mm'}}</small><br>              
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>

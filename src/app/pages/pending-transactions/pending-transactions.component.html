@@ -1,0 +1,19 @@
+<div class="container">    
+    <h1>Pending Transactions</h1>    
+    <br>
+
+    <span class="text-success"><h5>{{ ms }}</h5></span>
+    <br>
+    <span *ngIf="pendingTransactions == 0"
+    ><h5>Currently <b>Koin</b> does not have any Pending Transactions.</h5></span>        
+
+    <app-transactions-table    
+        *ngIf="pendingTransactions != 0"
+        [transactions]="pendingTransactions"
+    >
+    </app-transactions-table>      
+
+    <button class="btn btn-primary" (click)="minePendingTransactions()" *ngIf="pendingTransactions != 0">
+        Start Mining
+    </button>    
+</div>

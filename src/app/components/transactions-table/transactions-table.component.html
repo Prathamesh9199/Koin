@@ -1,0 +1,40 @@
+<p *ngIf="transactions === 'Genesis Block'">This block has no Transactions</p>
+
+<table class="table table-hover table-stripped" *ngIf="transactions != 'Genesis Block'">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Amount</th>
+            <th scope="col">TimeStamp</th>
+            <th scope="col">Valid ?</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tx of transactions; index as index">
+            <td>{{ index }}</td>
+            <td class="text-truncate" style="max-width: 100px;">
+                {{ tx.fromAddress }}
+                <span *ngIf="tx.fromAddress === null">System</span>
+            </td>
+            <td class="text-truncate" style="max-width: 100px;">
+                {{ tx.toAddress }}                
+            </td>
+            <td>
+                {{ tx.amount }}
+                <span *ngIf="tx.fromAddress === null" class="text-muted">
+                    <br><b>(Mining Reward)</b>
+                </span>
+            </td>
+            <td>
+                {{ tx.timeStamp }}
+                <span class="text-muted"><small>{{ tx.timeStamp | date: 'MM d, y, HH:mm'}}</small></span>
+            </td>
+            <td style="max-width: 400px;">
+                <span *ngIf="tx" class="text-success"><h2>&#10003;</h2></span>
+                <span *ngIf="!tx" class="text-danger"><h2>&#x2613;</h2></span>
+            </td>
+        </tr>
+    </tbody>
+</table>

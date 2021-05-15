@@ -1,0 +1,29 @@
+<div class="container" style="height: 75vh; overflow: auto;">
+    <h1>Blocks on chain</h1>
+    <p>Each card represents a Block on the Chain, Click on a block to see the transactions stored inside.</p> 
+    
+        <app-block-view            
+            *ngFor="let block of blocks.slice().reverse()"
+            [block]='block'
+            (click)="showTransactions(block)"
+            onclick="document.getElementById('Transactions').scrollIntoView();            "            
+        >        
+        </app-block-view>
+
+</div>
+<br>
+<hr>
+<div class="container" id="Transactions" style="height: 95vh; overflow: auto;">
+    <h1 id="Transactions">Transactions Inside Block</h1>
+    <br>
+    <app-block-view
+        [block]='selectedBlock'
+    >        
+    </app-block-view>    <br>
+    <br>
+    <app-transactions-table
+    *ngIf="selectedBlock != []"
+        [transactions]=selectedBlock.transactions        
+    >        
+    </app-transactions-table>
+</div>
